@@ -1,0 +1,189 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+        <title>CQL: Compi Query Language</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav class="nav-bar" id="navbar">
+            <header class="nav-header">
+                <h1>CQL</h1>
+            </header>
+            <a href="#Introducción" class="nav-link"><span>Introducción</span></a>
+            <a href="#DDL" class="nav-link"><span>DDL</span></a> 
+            <a href="#DML" class="nav-link"><span>DML</span></a>
+            <a href="#DCL" class="nav-link"><span>DCL</span></a>
+            <a href="#TCL" class="nav-link"><span>TCL</span></a>
+        </nav>
+        <div></div>
+        <main id="main-doc" class="main-doc"> 
+            <section class="main-section" id="Introducción">
+                <header>
+                    <h2>Introducción</h2>
+                </header>
+                <p>CQL significa "Compi Query Language" y es un clon del popular lenguaje 
+                    de bases de datos SQL (pronunciado "Si-Cu-El") que tiene el objetivo
+                    de ayudar al aprendizaje de manipulación de bases de datos a personas
+                    que sean ajenas a las tecnologías de información.
+                </p>
+                <p>
+                    CQL es un lenguaje de consultas que permite la manipulación de
+                     la información almacenada en un servidor de bases de datos. 
+                     Este lenguaje, aunque trabaja como uno solo, se divide en 5 grandes 
+                     grupos, los cuales son: 
+                </p>
+                <ul>
+                    <li>
+                        <strong> Lenguaje de Definición de Datos (DDL):</strong> Permite llevar
+                         a cabo las tareas de definición de las estructuras que 
+                         almacenarán los datos.<br><br>
+                    </li>
+                    <li>
+                        <strong> Lenguaje de Manipulación de datos (DML):</strong> Permite 
+                        la consulta, agregación, modificación o eliminación de los 
+                        datos dentro de las estructuras.<br><br>
+                    </li>
+                    <li>
+                        <strong> Lenguaje de Control de Datos (DCL):</strong> Se encarga
+                         de la administración de usuarios y permisos. <br><br>
+                    </li>
+                    <li>
+                        <strong> Lenguaje de Control de Transacciones (TCL):</strong> 
+                        Garantiza la integridad de la información por medio de las
+                         sentencias commit y rollback. <br><br>
+                    </li>
+                    <li>
+                        <strong> Lenguaje de Control de Flujo (FCL):</strong> Agrupa
+                         todas las sentencias de transferencia, selección y repetición,
+                          así como el manejo de variables, estructuras, entre otros.<br><br> 
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="DDL">
+                <header>
+                    <h2>DDL</h2>
+                </header>
+                <p>
+                    DDL es el lenguaje de programación propio de CQL que permite llevar
+                     a cabo las instrucciones para la definición de las estructuras que
+                     almacenarán los datos, como la creación de bases de datos y tablas.  
+                </p>
+                <p>
+                    DDL es conformado por varias instrucciones:
+                </p>
+                <ul>
+                    <li>
+                        Crear Bases de Datos: <br>
+                        <code> Create Database [If Not Exists] -Nombre_BD- </code><br><br>
+                    </li>
+                    <li>
+                        Usar una Bases de Datos: <br>
+                        <code> Use -Nombre_BD- </code><br><br>
+                    </li>
+                    <li>
+                        Eliminar una Base de Datos: <br>
+                        <code> Drop Database -Nombre_BD- </code><br><br>
+                    </li>
+                    <li>
+                        Crear una Tabla: <br>
+                        <code> Create Table [If Not Exists] -Nombre_Tabla- ( Definition_Tabla ); </code><br><br>
+                    </li>
+                    <li>
+                        Eliminar una Tabla: <br>
+                        <code> Drop Table [If Exists] -Nombre_Tabla-; </code><br><br>
+                    </li>
+                    <li>
+                        Truncar una Tabla: <br>
+                        <code> Truncate Table -Nombre_Tabla-; </code><br><br>
+                    </li>
+                </ul>
+                
+            </section>
+            <section class="main-section" id="DML">
+                <header>
+                    <h2>DML</h2>
+                </header>
+                <p>
+                    DML significa en inglés "Data Manipulation Language", lo que se traduce
+                    como "Lenguaje de Manipulación de Datos". Este sublenguaje incluye las sentencias que permiten manipular la información
+                    almacenada en la base de datos.
+                </p>
+                <p>
+                    Las sentencias que soporta CQL son las siguientes: 
+                </p>
+                <ul>
+                    <li>
+                        Insertar en una Tabla: <br>
+                        <code>Insert into -Nombre_Tabla- Values ( -Lista_Valores- );</code> <br><br>
+                    </li>
+                    <li>
+                        Actualizar un registro: <br>
+                        <code>Update -Nombre_Tabla- Set -Lista_Valor_Atributo- [Where Expresion];</code> <br><br>
+                    </li>
+                    <li>
+                        Eliminar un registro: <br>
+                        <code>Delete From -Nombre_Tabla- [Where Expresion];</code> <br><br>
+                    </li>
+                    <li>
+                        Seleccionar: <br>
+                        <code> Select -Lista_Campos- From -Nombre_Tabla-; </code> <br><br>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="DCL">
+                <header>
+                    <h2>DCL</h2>
+                </header>
+                <p>
+                    DCL significa en inglés "Data Control Language", que se traduce como 
+                    "Lenguaje de Control de Datos". Este sublenguaje se encarga de controlar
+                     el acceso a la información contenida en la base de datos.
+                </p>
+                <p>
+                    Las instrucciones soportadas son:
+                </p>
+                <ul>
+                    <li>
+                        Crear un usuario: <br>
+                        <code> Create User -Nombre_Usuario- With Password -Clave- </code> <br><br>
+                    </li>
+                    <li>
+                        Conceder permisos: <br>
+                        <code> Grant -Nombre_Usuario- On -Nombre_BD-;</code> <br><br>
+                    </li>
+                    <li>
+                        Revocar permisos: <br>
+                        <code> Revoke -Nombre_Usuario- on -Nombre_BD-;</code> <br><br>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="TCL">
+                <header>
+                    <h2>TCL</h2>
+                </header>
+                <p>
+                    Significa en inglés "Transaction Control Language" y se traduce como
+                     "Lenguaje de Control de Transacciones".
+                </p>
+                <p>
+                    Es el lenguaje utilizado para manejar las transacciones
+                     en la base de datos. Son utilizados para manejar 
+                     los cambios que se realizan a la información de la base 
+                     de datos. Consta de 2 sentencias básicas: 
+                </p>
+                <ul>
+                    <li>
+                        Comprometer los cambios: <br>
+                        <code>Commit;</code> <br><br>
+                    </li>
+                    <li>
+                        Deshacer los cambios: <br>
+                        <code>Rollback;</code> <br><br>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
